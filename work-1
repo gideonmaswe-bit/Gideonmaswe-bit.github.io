@@ -1,19 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="sw">
 <head>
-    <title>Gideon's Official Site</title>
+    <meta charset="UTF-8">
+    <title>Tovuti Binafsi ya Gideon</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background-color: #f4f4f4; }
-        .card { background: white; padding: 20px; border-radius: 15px; margin: 50px auto; width: 80%; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h1 { color: #333; }
-        p { color: #666; }
+        /* Hii inaficha maudhui mpaka nenosiri liwe sahihi */
+        #protected-content {
+            display: none;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        img {
+            margin-top: 20px;
+            border-radius: 10px;
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Hello, I'm Gideon</h1>
-        <p>University student and C Programming enthusiast.</p>
-        <p>Scanning my barcode? You've reached my digital home.</p>
+
+    <div id="login-screen" class="container">
+        <h2>Tovuti Hii Imelindwa</h2>
+        <p>Tafadhali ingiza nenosiri ili kuendelea:</p>
+        <input type="password" id="password-input" placeholder="Nenosiri">
+        <button onclick="checkPassword()">Ingia</button>
     </div>
+
+    <div id="protected-content" class="container">
+        <h1>Karibu kwenye ukurasa wangu, Gideon!</h1>
+        <p>Umefanikiwa kuingia.</p>
+        
+        <hr>
+        
+        <h3>Picha Yangu</h3>
+        <img src="picha.jpg" alt="Picha ya Gideon" style="width:250px;">
+
+        <h3>Wasiliana nami kupitia QR Code</h3>
+        <img src="qrcode.png" alt="QR Code ya Mawasiliano" style="width:200px;">
+        
+        <p>Karibu tena wakati mwingine!</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password-input").value;
+            // Unaweza kubadilisha "1234" kuwa nenosiri lako unalotaka
+            if (password === "Gabriella05") {
+                document.getElementById("login-screen").style.display = "none";
+                document.getElementById("protected-content").style.display = "block";
+            } else {
+                alert("Nenosiri si sahihi. Jaribu tena!");
+            }
+        }
+    </script>
+
 </body>
 </html>
